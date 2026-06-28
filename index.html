@@ -17,7 +17,7 @@
             </div>
             <h1>PRAPATSORN</h1>
             <p class="subtitle">初めまして、プラパッソーンです！</p>
-            <p class="tagline">มัธยมศึกษาปีที่ 6 | ผู้หลงใหลในภาษาญี่ปุ่นและเทคโนโลยี</p>
+            <p class="tagline">มัธยมศึกษาปีที่ 6 | ผู้ชื่นชอบและหลงใหลในภาษาญี่ปุ่น</p>
         </div>
     </header>
 
@@ -34,6 +34,25 @@
             
             <div class="tab-navigation">
                 <button class="tab-btn active" onclick="switchTab('all')">ทั้งหมด</button>
+                <button class="tab-btn" onclick="switchTab('language')">ภาษา & วัฒนธรรม</button>
+                <button class="tab-btn" onclick="switchTab('activities')">กิจกรรม & จิตอาสา</button>
+            </div>
+
+            <div class="projects-grid">
+
+                <div class="project-card" data-category="language">
+                    <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
+                        <img src="jlpt.jpg" alt="JLPT" onerror="this.src='https://placehold.co/600x400/3e2723/fef08a?text=JLPT+Exam'">
+                        <div class="image-overlay">คลิกเพื่อดูรูปใหญ่</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="badge badge-lang">Language</span>
+                        <h3>การทดสอบวัดระดับภาษาญี่ปุ่น (JLPT)</h3>
+                        <p>มุ่งมั่นศึกษาและท้าทายตนเองด้วยการเข้าทดสอบวัดระดับความรู้ภาษาญี่ปุ่นสากล เพื่อวัดประสิทธิภาพการเรียนรู้และนำผลคะแนนมาเป็นแนวทางในการพัฒนาทักษะทางภาษาต่อไป</p>
+                    </div>
+                </div>
+
+                
                 <button class="tab-btn" onclick="switchTab('language')">ภาษา & วัฒนธรรม</button>
                 <button class="tab-btn" onclick="switchTab('tech')">เทคโนโลยี & Dev</button>
                 <button class="tab-btn" onclick="switchTab('activities')">กิจกรรม & จิตอาสา</button>
