@@ -45,7 +45,6 @@
             </div>
 
             <div class="projects-grid">
-
                 <div class="project-card" data-category="language" data-images="jlpt.jpg, jlpt2.jpg">
                     <div class="card-image" onclick="openLightbox(this.closest('.project-card'))">
                         <img src="jlpt.jpg" alt="JLPT">
@@ -67,7 +66,6 @@
                         <p>ผ่านการฝึกอบรมและเข้าร่วมกิจกรรมบำเพ็ญประโยชน์เพื่อส่วนรวมในฐานะยุวกาชาดระดับ 4 ซึ่งช่วยหล่อหลอมทักษะความเป็นผู้นำ การทำงานเป็นทีม และการมีจิตสาธารณะ</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -114,4 +112,29 @@
         <div class="modal-container">
             <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
             <div class="modal-body">
-                <div class="modal-image-side
+                <div class="modal-image-side">
+                    <button id="prev-btn" class="slider-btn" onclick="changeImage(-1, event)">&#10094;</button>
+                    <img id="lightbox-img" src="" alt="Work Preview">
+                    <button id="next-btn" class="slider-btn" onclick="changeImage(1, event)">&#10095;</button>
+                </div>
+                <div class="modal-info-side">
+                    <div id="modal-badge-container"></div>
+                    <h3 id="modal-title">ชื่อผลงาน</h3>
+                    <div class="chat-bubble">
+                        <p id="modal-desc">รายละเอียดผลงาน...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Prapatsorn Saengsimma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("year").innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
