@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะของ PRAPATSORN">
+    <title>PRAPATSORN | Interactive Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="profile-container">
+            <div class="avatar-wrapper">
+                <img src="77.jpg" alt="PRAPATSORN" class="profile-img" onerror="this.src='https://placehold.co/150x150/2b2825/38bdf8?text=P'">
+            </div>
+            <h1>PRAPATSORN</h1>
+            <p class="subtitle">初めまして、プラパッソーンです！</p>
+            <p class="tagline">มัธยมศึกษาปีที่ 6 | ผู้หลงใหลในภาษาญี่ปุ่นและเทคโนโลยี</p>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="about" class="glass-card">
+            <h2><span class="icon">🇯🇵</span> เกี่ยวกับฉัน</h2>
+            <p>ฉันเป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6 ที่มีความหลงใหลในภาษาและวัฒนธรรมญี่ปุ่น ปัจจุบันกำลังมุ่งมั่นพัฒนาทักษะด้านภาษาญี่ปุ่นเพื่อเตรียมพร้อมสู่การเรียนต่อในระดับมหาวิทยาลัยค่ะ</p>
+            <p>นอกจากการเรียนในห้องเรียนแล้ว ฉันยังชอบท้าทายตัวเองด้วยการฝึกฝนภาษาญี่ปุ่นผ่านสื่อต่างๆ ทั้งการอ่าน การฟัง และการลงมือทำโปรเจกต์ดิจิทัลด้วยตนเอง เว็บไซต์ Portfolio นี้จึงเป็นอีกหนึ่งความตั้งใจที่ฉันอยากจะแสดงให้เห็นถึงความมุ่งมั่นในการพัฒนาทักษะรอบด้าน เพื่อพร้อมเปิดรับทุกการเรียนรู้ในระดับมหาวิทยาลัยค่ะ</p>
+        </section>
+
+        <section id="portfolio" class="glass-card">
+            <h2><span class="icon">✨</span> ผลงานและความภาคภูมิใจ</h2>
+            
+            <div class="tab-navigation">
+                <button class="tab-btn active" onclick="switchTab('all')">ทั้งหมด</button>
+                <button class="tab-btn" onclick="switchTab('language')">ภาษา & วัฒนธรรม</button>
+                <button class="tab-btn" onclick="switchTab('tech')">เทคโนโลยี & Dev</button>
+                <button class="tab-btn" onclick="switchTab('activities')">กิจกรรม & จิตอาสา</button>
+            </div>
+
+            <div class="projects-grid">
+                
+                <div class="project-card" data-category="tech">
+                    <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
+                        <img src="project1.jpg" alt="Portfolio Website" onerror="this.src='
+
