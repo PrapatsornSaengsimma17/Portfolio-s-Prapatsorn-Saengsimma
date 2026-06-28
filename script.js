@@ -1,5 +1,5 @@
 /**
- * 1. ระบบคัดกรองหน้าผลงาน (Tab Switching & Filtering)
+ * 1. ระบบกดสลับเปลี่ยนหน้าผลงาน (Tab Switching & Filtering)
  */
 function switchTab(category) {
     const buttons = document.querySelectorAll('.tab-btn');
@@ -26,22 +26,34 @@ function switchTab(category) {
 }
 
 /**
- * 2. ระบบ Popup ขยายรูปภาพ (Lightbox View)
+ * 2. ระบบเปิดกล่องแชทลอยอธิบายผลงาน (Dynamic Pop-up Modal)
  */
 function openLightbox(imageSrc) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+    const currentCard = event.currentTarget.closest('.project-card');
     
-    lightboxImg.src = imageSrc;
-    lightbox.style.display = 'flex';
-}
+    const title = currentCard.querySelector('h3').innerText;
+    const desc = currentCard.querySelector('p').innerText;
+    const badgeHTML = currentCard.querySelector('.badge').outerHTML;
 
-function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
+    document.getElementById('lightbox-img').src = imageSrc;
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-desc').innerText = desc;
+    document.getElementById('modal-badge-container').innerHTML = badgeHTML;
+
+    document.getElementById('lightbox').style.display = 'flex';
 }
 
 /**
- * 3. อัปเดตปีลิขสิทธิ์อัตโนมัติในส่วน Footer
+ * 3. ระบบปิดกล่องแชทลอย
+ */
+function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.classList.contains('close-btn')) {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+}
+
+/**
+ * 4. อัปเดตปี ค.ศ. อัตโนมัติในส่วนล่างสุดของเว็บ
  */
 document.addEventListener("DOMContentLoaded", () => {
     const yearSpan = document.getElementById('year');
