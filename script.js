@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalItems = items.length; 
         let currentIndex = 0;
 
-        // สำหรับงานที่มีรูปภาพรูปเดียว (JLPT และ ค่ายภาษา) จะใช้เอฟเฟกต์เฟดนุ่มๆ วนอยู่ที่เดิม ไม่สไลด์ไปหน้าขาว
         if (totalItems === 1) {
             setInterval(() => {
                 wrapper.style.transition = "opacity 0.4s ease-in-out";
@@ -23,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         } 
 
-        // สำหรับงานที่มีหลายรูปภาพ (ยุวกาชาด มี 2 รูปตามที่คุณระบุ) จะสไลด์สลับภาพซ้าย-ขวาอย่างสมบูรณ์
         setInterval(() => {
             currentIndex++;
             if (currentIndex >= totalItems) {
@@ -69,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
             modalDesc.innerText = desc;
             modalImg.src = currentImages[currentImgIndex];
 
-            // ถ้ารูปภาพมีใบเดียว จะซ่อนปุ่มลูกศรในหน้าป๊อปอัพโดยอัตโนมัติ
             if (currentImages.length <= 1) {
                 prevBtn.style.display = "none";
                 nextBtn.style.display = "none";
