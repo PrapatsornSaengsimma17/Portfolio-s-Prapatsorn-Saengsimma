@@ -52,28 +52,80 @@
                     </div>
                 </div>
 
-                
-                <button class="tab-btn" onclick="switchTab('language')">ภาษา & วัฒนธรรม</button>
-                <button class="tab-btn" onclick="switchTab('tech')">เทคโนโลยี & Dev</button>
-                <button class="tab-btn" onclick="switchTab('activities')">กิจกรรม & จิตอาสา</button>
-            </div>
-
-            <div class="projects-grid">
-                
-                <div class="project-card" data-category="tech">
+                <div class="project-card" data-category="language">
                     <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="project1.jpg" alt="Portfolio Website" onerror="this.src='https://placehold.co/600x400/3e2723/e0f2fe?text=Portfolio+Web'">
+                        <img src="camp.jpg" alt="Open House" onerror="this.src='https://placehold.co/600x400/3e2723/fef08a?text=Japan+Camp'">
                         <div class="image-overlay">คลิกเพื่อดูรูปใหญ่</div>
                     </div>
                     <div class="card-content">
-                        <span class="badge badge-tech">Web Development</span>
-                        <h3>เว็บไซต์ Portfolio ประจำตัว</h3>
-                        <p>ออกแบบและเขียนโค้ดเว็บไซต์นี้ขึ้นมาด้วยตนเอง เพื่อรวบรวมและนำเสนอผลงาน ความสามารถ รวมถึงสะท้อนความตั้งใจในการนำทักษะด้านเทคโนโลยีมาประยุกต์ใช้ร่วมกับคนสายภาษา</p>
+                        <span class="badge badge-lang">Culture</span>
+                        <h3>ค่ายเปิดบ้านภาษาและวัฒนธรรมญี่ปุ่น</h3>
+                        <p>เข้าร่วมกิจกรรมค่ายจำลองเพื่อฝึกฝนทักษะการสื่อสารภาษาญี่ปุ่นและเรียนรู้วัฒนธรรมเชิงลึกร่วมกับเพื่อนๆ ต่างสถาบัน ช่วยเปิดโลกทัศน์และสร้างแรงบันดาลใจ</p>
                     </div>
                 </div>
 
-                
-                <div class="project-card" data-category="tech">
+                <div class="project-card" data-category="activities">
                     <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="project1.jpg" alt="Portfolio Website" onerror="this.src='
+                        <img src="volunteer.jpg" alt="Volunteer" onerror="this.src='https://placehold.co/600x400/3e2723/f5f5f5?text=Volunteer'">
+                        <div class="image-overlay">คลิกเพื่อดูรูปใหญ่</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="badge badge-act">Volunteer</span>
+                        <h3>กิจกรรมจิตอาสายุวกาชาด ระดับ 4</h3>
+                        <p>ผ่านการฝึกอบรมและเข้าร่วมกิจกรรมบำเพ็ญประโยชน์เพื่อส่วนรวมในฐานะยุวกาชาดระดับ 4 ซึ่งช่วยหล่อหลอมทักษะความเป็นผู้นำ การทำงานเป็นทีม และการมีจิตสาธารณะ</p>
+                    </div>
+                </div>
 
+            </div>
+        </section>
+
+        <section id="skills" class="glass-card">
+            <h2><span class="icon">🛠️</span> ทักษะความสามารถ</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages & Culture</h3>
+                    <div class="skill-tags">
+                        <span>Japanese (JLPT Studies)</span>
+                        <span>English Communication</span>
+                        <span>Thai Language</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Digital & Design Skills</h3>
+                    <div class="skill-tags">
+                        <span>UI/UX Design</span>
+                        <span>Figma</span>
+                        <span>HTML / CSS Basics</span>
+                        <span>Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="modal-container">
+            <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-side">
+                    <img id="lightbox-img" src="" alt="Work Preview">
+                </div>
+                <div class="modal-info-side">
+                    <div id="modal-badge-container"></div>
+                    <h3 id="modal-title">ชื่อผลงาน</h3>
+                    <div class="chat-bubble">
+                        <p id="modal-desc">รายละเอียดผลงาน...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>ติดต่อฉันได้ที่: <a href="mailto:napat.sengsimma@gmail.com">napat.sengsimma@gmail.com</a></p>
+        <p>&copy; <span id="year"></span> PRAPATSORN. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
