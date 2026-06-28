@@ -55,12 +55,12 @@ header {
     margin: 0 auto;
 }
 
-/* 🌟 ปรับรูปโปรไฟล์ตัวเราให้ใหญ่ขึ้นเด่นขึ้น (ขยายเป็น 220px สัดส่วน 3:4 แนวตั้ง) */
+/* 🌟 ปรับรูปโปรไฟล์ตัวเราให้ใหญ่ขึ้นเด่นขึ้นสะดุดตา (ขยายเพิ่มเป็น 280px สัดส่วน 3:4 แนวตั้ง) */
 .avatar-wrapper {
-    width: 220px; 
+    width: 280px; /* ปรับเพิ่มขนาดตามคำขอให้ใหญ่เด่นชัดเจน */
     aspect-ratio: 3 / 4; 
     margin: 0 auto 25px;
-    border-radius: 24px; 
+    border-radius: 28px; /* เพิ่มความโค้งมนให้เข้ากับขนาดรูปที่ใหญ่ขึ้น */
     padding: 5px;
     background: linear-gradient(135deg, #bae6fd, #fef08a);
     box-shadow: 0 10px 30px rgba(109, 76, 65, 0.12);
@@ -71,7 +71,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px; 
+    border-radius: 24px; 
 }
 
 header h1 {
