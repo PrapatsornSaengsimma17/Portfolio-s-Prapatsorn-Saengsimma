@@ -1,5 +1,6 @@
 let currentImages = [];
 let currentIndex = 0;
+let autoSlideTimer; 
 
 function switchTab(category, event) {
     const tabs = document.querySelectorAll('.tab-btn');
@@ -38,16 +39,18 @@ function openLightbox(cardElement) {
     if (currentImages.length > 1) {
         prevBtn.style.display = 'block';
         nextBtn.style.display = 'block';
+        startAutoSlide(); 
     } else {
         prevBtn.style.display = 'none'; 
         nextBtn.style.display = 'none';
+        stopAutoSlide();
     }
 
     document.getElementById('lightbox').style.display = 'flex';
 }
 
 function changeImage(direction, event) {
-    event.stopPropagation();
+    if(event) event.stopPropagation();
     currentIndex += direction;
     
     if (currentIndex < 0) {
@@ -57,10 +60,27 @@ function changeImage(direction, event) {
     }
     
     document.getElementById('lightbox-img').src = currentImages[currentIndex];
+
+    if(event) {
+        stopAutoSlide();
+        startAutoSlide();
+    }
 }
 
 function closeLightbox(event) {
     if (event.target.id === 'lightbox' || event.target.className === 'close-btn') {
         document.getElementById('lightbox').style.display = 'none';
+        stopAutoSlide(); 
     }
+}
+
+function startAutoSlide() {
+    stopAutoSlide(); 
+    autoSlideTimer = setInterval(() => {
+        changeImage(1);
+    }, 4000); 
+}
+
+function stopAutoSlide() {
+    clearInterval(autoSlideTimer);
 }
