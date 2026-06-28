@@ -39,15 +39,15 @@
             <h2><span class="icon">✨</span> ผลงานและความภาคภูมิใจ</h2>
             
             <div class="tab-navigation">
-                <button class="tab-btn active" onclick="switchTab('all', event)">ทั้งหมด</button>
-                <button class="tab-btn" onclick="switchTab('language', event)">ภาษา & วัฒนธรรม</button>
-                <button class="tab-btn" onclick="switchTab('activities', event)">กิจกรรม & จิตอาสา</button>
+                <button class="tab-btn active" data-tab="all">ทั้งหมด</button>
+                <button class="tab-btn" data-tab="language">ภาษา & วัฒนธรรม</button>
+                <button class="tab-btn" data-tab="activities">กิจกรรม & จิตอาสา</button>
             </div>
 
             <div class="projects-grid">
                 
                 <div class="project-card" data-category="language">
-                    <div class="card-image inline-slider" data-images="02.jpg, jlpt.jpg, jlpt2.jpg">
+                    <div class="card-image inline-slider">
                         <div class="slider-wrapper">
                             <img src="02.jpg" alt="JLPT Cover" class="slider-item">
                             <img src="jlpt.jpg" alt="JLPT 1" class="slider-item">
@@ -62,4 +62,104 @@
                 </div>
 
                 <div class="project-card" data-category="language">
-                    <div class="card-image inline-slider" data-images="camp1.jpg">
+                    <div class="card-image inline-slider">
+                        <div class="slider-wrapper">
+                            <img src="camp1.jpg" alt="Japanese Camp" class="slider-item">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="badge badge-lang">Language & Culture</span>
+                        <h3>กิจกรรมค่ายภาษา</h3>
+                        <p>เข้าร่วมกิจกรรมค่ายเรียนรู้วัฒนธรรมและฝึกฝนภาษาญี่ปุ่น เพื่อพัฒนาทักษะการสื่อสารในสถานการณ์จำลอง เปิดมุมมองใหม่ๆ และแลกเปลี่ยนประสบการณ์ร่วมกับเพื่อนๆ และเจ้าของภาษา</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="activities">
+                    <div class="card-image inline-slider">
+                        <div class="slider-wrapper">
+                            <img src="021.png" alt="Volunteer 1" class="slider-item">
+                            <img src="022.jpg" alt="Volunteer 2" class="slider-item">
+                            <img src="volunteer.jpg" alt="Volunteer 3" class="slider-item">
+                            <img src="volunteer2.jpg" alt="Volunteer 4" class="slider-item">
+                            <img src="volunteer3.jpg" alt="Volunteer 5" class="slider-item">
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="badge badge-act">Volunteer</span>
+                        <h3>กิจกรรมจิตอาสายุวกาชาด ระดับ 4</h3>
+                        <p>ผ่านการฝึกอบรมและเข้าร่วมกิจกรรมบำเพ็ญประโยชน์เพื่อส่วนรวมในฐานะยุวกาชาดระดับ 4 ซึ่งช่วยหล่อหลอมทักษะความเป็นผู้นำ การทำงานเป็นทีม และการมีจิตสาธารณะ</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="skills" class="glass-card">
+            <h2><span class="icon">🛠️</span> ทักษะความสามารถ</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>ภาษาญี่ปุ่น (Japanese Skills)</h3>
+                    <div class="skill-tags">
+                        <span>การสื่อสารภาษาญี่ปุ่น (Japanese Communication)</span>
+                        <span>ความรู้ภาษาญี่ปุ่นระดับ N5 (JLPT N5 Level)</span>
+                        <span>การฟัง พูด อ่าน เขียน ระดับ N5 (N5 Skills)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>ภาษาอังกฤษ (English Skills)</h3>
+                    <div class="skill-tags">
+                        <span>ภาษาอังกฤษเพื่อการสื่อสาร (English for Communication)</span>
+                        <span>การฟัง พูด อ่าน เขียน ภาษาอังกฤษ (English Skills)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>สื่อดิจิทัลและความคิดสร้างสรรค์ (Digital & Creative)</h3>
+                    <div class="skill-tags">
+                        <span>การออกแบบสื่อและสไลด์ด้วย Canva (Canva Presentation & Design)</span>
+                        <span>การตัดต่อวิดีโอ (Video Editing)</span>
+                        <span>ทักษะการวาดภาพพื้นฐาน (Basic Drawing & Illustration)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>การทำงานและมนุษยสัมพันธ์ (Interpersonal & Teamwork)</h3>
+                    <div class="skill-tags">
+                        <span>การทำงานเป็นทีม (Teamwork & Collaboration)</span>
+                        <span>มนุษยสัมพันธ์ดี (Interpersonal Skills)</span>
+                        <span>รับฟังความคิดเห็นผู้อื่น (Active Listening)</span>
+                        <span>จิตสาธารณะ (Empathy & Volunteer Mindset)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <div class="modal-container">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-side">
+                    <button id="prev-btn" class="slider-btn">&#10094;</button>
+                    <img id="lightbox-img" src="" alt="Work Preview">
+                    <button id="next-btn" class="slider-btn">&#10095;</button>
+                </div>
+                <div class="modal-info-side">
+                    <div id="modal-badge-container"></div>
+                    <h3 id="modal-title">ชื่อผลงาน</h3>
+                    <div class="chat-bubble">
+                        <p id="modal-desc">รายละเอียดผลงาน...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Prapatsorn Saengsimma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("year").innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
