@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================
-    // 1. ระบบเลื่อนภาพสไลด์อัตโนมัติ (Inline Slider)
+    // 1. ระบบเลื่อนภาพสไลด์อัตโนมัติ (Inline Slider) ทุกๆ 4 วินาที
     // ==========================================
     const sliders = document.querySelectorAll(".card-image.inline-slider");
 
@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalItems = items.length; 
         let currentIndex = 0;
 
-        // สำหรับงานที่มีรูปเดียว (ค่ายภาษา) ให้เล่นเอฟเฟกต์เฟดวนรูปตัวเองนุ่มๆ
+        // สำหรับงานที่มีรูปภาพรูปเดียว (JLPT และ ค่ายภาษา) จะใช้เอฟเฟกต์เฟดนุ่มๆ วนอยู่ที่เดิม ไม่สไลด์ไปหน้าขาว
         if (totalItems === 1) {
             setInterval(() => {
                 wrapper.style.transition = "opacity 0.4s ease-in-out";
-                wrapper.style.opacity = "0.3";
+                wrapper.style.opacity = "0.4";
                 setTimeout(() => {
                     wrapper.style.opacity = "1";
                 }, 400); 
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         } 
 
-        // สำหรับงานที่มีหลายรูป (JLPT, ยุวกาชาด) เลื่อนขวาต่อเนื่องไร้หน้าขาว
+        // สำหรับงานที่มีหลายรูปภาพ (ยุวกาชาด มี 2 รูปตามที่คุณระบุ) จะสไลด์สลับภาพซ้าย-ขวาอย่างสมบูรณ์
         setInterval(() => {
             currentIndex++;
             if (currentIndex >= totalItems) {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ==========================================
-    // 2. ระบบกดคลิกที่การ์ดเพื่อเปิดดูรูปใหญ่ (Lightbox Popup)
+    // 2. ระบบกดคลิกที่การ์ดผลงานเพื่อเปิดดูรูปใหญ่ (Lightbox Popup)
     // ==========================================
     const projectCards = document.querySelectorAll(".project-card");
     const lightbox = document.getElementById("lightbox");
@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             modalDesc.innerText = desc;
             modalImg.src = currentImages[currentImgIndex];
 
+            // ถ้ารูปภาพมีใบเดียว จะซ่อนปุ่มลูกศรในหน้าป๊อปอัพโดยอัตโนมัติ
             if (currentImages.length <= 1) {
                 prevBtn.style.display = "none";
                 nextBtn.style.display = "none";
