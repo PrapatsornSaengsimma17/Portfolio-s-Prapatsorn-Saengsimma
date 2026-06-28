@@ -7,32 +7,6 @@
     <title>Prapatsorn Saengsimma | Interactive Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* ส่วนเสริมพิเศษสำหรับลายจุดหน้าปก JLPT */
-        .jlpt-cover {
-            width: 100%;
-            height: 100%;
-            background-color: #fef9e7; /* สีครีมละมุน */
-            background-image: radial-gradient(#bae6fd 20%, transparent 20%),
-                              radial-gradient(#bae6fd 20%, transparent 20%);
-            background-position: 0 0, 15px 15px;
-            background-size: 30px 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .jlpt-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 4.8rem; 
-            font-weight: 700;
-            color: #4b2c20; /* สีน้ำตาลช็อกโกแลต */
-            letter-spacing: 4px;
-            padding: 20px;
-            background-color: rgba(254, 249, 231, 0.6); 
-            border-radius: 15px;
-        }
-    </style>
 </head>
 <body>
 
@@ -72,10 +46,14 @@
 
             <div class="projects-grid">
                 
-                <div class="project-card" data-category="language" data-images="jlpt.jpg, jlpt2.jpg">
-                    <div class="card-image" onclick="openLightbox(this.closest('.project-card'))">
-                        <div class="jlpt-cover">
-                            <span class="jlpt-text">JLPT</span>
+                <div class="project-card" data-category="language">
+                    <div class="card-image inline-slider" data-images="inline-jlpt, jlpt.jpg, jlpt2.jpg">
+                        <div class="slider-wrapper">
+                            <div class="slider-item jlpt-cover">
+                                <span class="jlpt-text">JLPT</span>
+                            </div>
+                            <img src="jlpt.jpg" alt="JLPT 1" class="slider-item">
+                            <img src="jlpt2.jpg" alt="JLPT 2" class="slider-item">
                         </div>
                     </div>
                     <div class="card-content">
@@ -85,9 +63,11 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="language" data-images="camp1.jpg">
-                    <div class="card-image" onclick="openLightbox(this.closest('.project-card'))">
-                        <img src="camp1.jpg" alt="Japanese Camp">
+                <div class="project-card" data-category="language">
+                    <div class="card-image inline-slider" data-images="camp1.jpg">
+                        <div class="slider-wrapper">
+                            <img src="camp1.jpg" alt="Japanese Camp" class="slider-item">
+                        </div>
                     </div>
                     <div class="card-content">
                         <span class="badge badge-lang">Language & Culture</span>
@@ -96,9 +76,15 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="activities" data-images="021.png, 022.jpg, volunteer.jpg, volunteer2.jpg, volunteer3.jpg">
-                    <div class="card-image" onclick="openLightbox(this.closest('.project-card'))">
-                        <img src="021.png" alt="Volunteer">
+                <div class="project-card" data-category="activities">
+                    <div class="card-image inline-slider" data-images="021.png, 022.jpg, volunteer.jpg, volunteer2.jpg, volunteer3.jpg">
+                        <div class="slider-wrapper">
+                            <img src="021.png" alt="Volunteer 1" class="slider-item">
+                            <img src="022.jpg" alt="Volunteer 2" class="slider-item">
+                            <img src="volunteer.jpg" alt="Volunteer 3" class="slider-item">
+                            <img src="volunteer2.jpg" alt="Volunteer 4" class="slider-item">
+                            <img src="volunteer3.jpg" alt="Volunteer 5" class="slider-item">
+                        </div>
                     </div>
                     <div class="card-content">
                         <span class="badge badge-act">Volunteer</span>
