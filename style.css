@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Prompt', sans-serif;
-    background: #f4f7f6;
-    color: #4b2c20; /* ตัวหนังสือหลักทั้งหมดเป็นสีน้ำตาลช็อกโกแลต */
+    background: #fbfbf9; /* พื้นหลังเว็บสีครีมสว่างสะอาดตา */
+    color: #4b2c20; /* ตัวหนังสือหลักสีน้ำตาลช็อกโกแลตเข้ม */
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -19,10 +19,10 @@ body {
     padding: 20px;
 }
 
-/* --- Header & Profile (สีน้ำตาลช็อกโกแลตเข้ม 🍫) --- */
+/* --- Header & Profile (ปรับใหม่: พื้นหลังฟ้าโมมงกะสดใส 🔵 + ตัวหนังสือน้ำตาลช็อกโกแลต 🍫) --- */
 header {
-    background: linear-gradient(135deg, #4b2c20, #6d4c41) !important;
-    color: #4b2c20; 
+    background: #9FD9F6 !important; /* สีฟ้าโมมงกะพาสเทล น่ารักสดใส ไม่มืด */
+    color: #4b2c20; /* ตัวอักษรสีน้ำตาลช็อกโกแลตเข้ม ชัดเจนอ่านง่าย */
     text-align: center;
     padding: 60px 20px;
     position: relative;
@@ -39,8 +39,8 @@ header {
     margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #4b2c20; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 4px solid #4b2c20; /* ขอบรูปสีน้ำตาลช็อกโกแลต */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .profile-img {
@@ -53,19 +53,19 @@ header h1 {
     font-size: 2.2rem;
     margin-bottom: 5px;
     font-weight: 600;
-    color: #fef9e7; /* ตัวหนังสือชื่อสีครีมละมุนให้ตัดกับพื้นหลัง */
+    color: #4b2c20; /* ชื่อสีน้ำตาลช็อกโกแลตเข้ม */
 }
 
 .subtitle {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.2rem;
-    color: #d7ccc8; 
+    color: #5d4037; /* สีน้ำตาลซอฟต์เข้ม */
     margin-bottom: 10px;
 }
 
 .tagline {
     font-size: 1rem;
-    color: #fef9e7; 
+    color: #4b2c20; 
     opacity: 0.9;
     margin-bottom: 20px;
 }
@@ -76,18 +76,19 @@ header h1 {
 }
 
 .contact-badge {
-    background: rgba(254, 249, 231, 0.2); 
-    color: #fef9e7; 
+    background: rgba(255, 255, 255, 0.5); /* พื้นหลังขาวโปร่งแสงละมุนๆ */
+    color: #4b2c20; /* ตัวหนังสือน้ำตาลเข้ม */
     padding: 8px 16px;
     border-radius: 20px;
     text-decoration: none;
     font-size: 0.9rem;
-    border: 1px solid rgba(75, 44, 32, 0.3);
+    border: 1px solid #4b2c20;
+    font-weight: 600;
     transition: background 0.3s;
 }
 
 .contact-badge:hover {
-    background: rgba(254, 249, 231, 0.3);
+    background: rgba(255, 255, 255, 0.8);
 }
 
 /* --- Section Cards (Glassmorphism) --- */
@@ -102,7 +103,7 @@ header h1 {
 .glass-card h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-    color: #4b2c20; 
+    color: #4b2c20; /* หัวข้อสีน้ำตาลช็อกโกแลต */
     display: flex;
     align-items: center;
 }
@@ -113,7 +114,7 @@ header h1 {
 
 .glass-card p {
     margin-bottom: 15px;
-    color: #4b2c20; 
+    color: #5d4037; /* เนื้อความน้ำตาลอ่านง่ายบนพื้นขาว */
     text-indent: 20px;
 }
 
@@ -133,13 +134,13 @@ header h1 {
     font-size: 1rem;
     padding: 8px 16px;
     cursor: pointer;
-    color: #8d6e63; 
+    color: #a1887f; /* สีปุ่มปกติ น้ำตาลนู้ดซอฟต์ๆ */
     position: relative;
     transition: color 0.3s;
 }
 
 .tab-btn.active {
-    color: #4b2c20; 
+    color: #4b2c20; /* สีปุ่มที่เลือก น้ำตาลช็อกโกแลตเข้ม */
     font-weight: 600;
 }
 
@@ -150,7 +151,7 @@ header h1 {
     left: 0;
     width: 100%;
     height: 3px;
-    background: #4b2c20; 
+    background: #4b2c20; /* เส้นใต้สีน้ำตาลช็อกโกแลต */
     border-radius: 3px;
 }
 
@@ -162,11 +163,11 @@ header h1 {
 }
 
 .project-card {
-    background: #f8fafc;
+    background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    border: 1px solid #efebe9;
     display: flex;
     flex-direction: column;
 }
@@ -212,7 +213,7 @@ header h1 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 3.5rem;
     font-weight: 700;
-    color: #4b2c20; 
+    color: #4b2c20; /* อักษร JLPT สีน้ำตาลช็อกโกแลต */
     letter-spacing: 4px;
     padding: 10px 20px;
     background-color: rgba(254, 249, 231, 0.85); 
@@ -235,161 +236,4 @@ header h1 {
 
 .badge {
     align-self: flex-start;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.badge-lang { background: #efebe9; color: #4b2c20; } 
-.badge-act { background: #d7ccc8; color: #4b2c20; }
-
-.card-content h3 {
-    font-size: 1.15rem;
-    color: #4b2c20; 
-    margin-bottom: 10px;
-}
-
-/* --- Skills Tags --- */
-.skills-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-@media(min-width: 768px) {
-    .skills-container { grid-template-columns: 1fr 1fr; }
-}
-
-.skill-category h3 {
-    font-size: 1rem;
-    color: #4b2c20; 
-    margin-bottom: 12px;
-    font-weight: 600;
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.skill-tags span {
-    background: #efebe9;
-    color: #4b2c20; 
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    border: 1px solid #d7ccc8;
-}
-
-/* --- Lightbox Popup Modals --- */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.modal-container {
-    background: white;
-    width: 100%;
-    max-width: 850px;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.close-btn {
-    position: absolute;
-    top: 15px; right: 20px;
-    font-size: 2rem; color: #4b2c20; 
-    cursor: pointer; z-index: 10;
-    transition: color 0.3s;
-}
-
-.close-btn:hover { color: #ef4444; }
-
-.modal-body {
-    display: flex;
-    flex-direction: column;
-}
-
-@media(min-width: 768px) {
-    .modal-body { flex-direction: row; }
-}
-
-.modal-image-side {
-    background: #000;
-    flex: 1.2;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px;
-}
-
-.modal-image-side img {
-    max-width: 100%;
-    max-height: 450px;
-    object-fit: contain;
-}
-
-.slider-btn {
-    position: absolute;
-    top: 50%; transform: translateY(-50%);
-    background: rgba(75, 44, 32, 0.3); 
-    color: white; border: none;
-    padding: 12px 16px; cursor: pointer;
-    font-size: 1.2rem; border-radius: 50%;
-    transition: background 0.3s;
-}
-
-.slider-btn:hover { background: rgba(75, 44, 32, 0.6); }
-#prev-btn { left: 15px; }
-#next-btn { right: 15px; }
-
-.modal-info-side {
-    flex: 1;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: #fafafa;
-}
-
-#modal-title {
-    font-size: 1.3rem;
-    color: #4b2c20; 
-    margin-bottom: 15px;
-}
-
-.chat-bubble {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid #e5e5e5;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
-
-#modal-desc {
-    font-size: 0.95rem;
-    color: #4b2c20; 
-    line-height: 1.6;
-}
-
-/* --- Footer --- */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #8d6e63; 
-    font-size: 0.85rem;
-}
+    padding: 4px
