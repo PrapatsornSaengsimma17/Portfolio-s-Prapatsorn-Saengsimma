@@ -1,0 +1,318 @@
+:root {
+    /* ธีมคู่สี: น้ำตาลช็อกโกแลต, ฟ้าพาสเทล, เหลืองครีม */
+    --bg-color: #2b1810;             /* น้ำตาลช็อกโกแลตเข้ม (Rich Chocolate) */
+    --card-bg: rgba(62, 39, 35, 0.65); /* น้ำตาลช็อกโกแลตละมุนโปร่งแสง */
+    --card-border: rgba(254, 240, 138, 0.15); /* ขอบครีมอ่อนๆ */
+    
+    --text-color: #fffbeb;           /* เหลืองครีมสว่างมากๆ เกือบขาว (Warm Cream) */
+    --text-muted: #d7ccc8;           /* น้ำตาลครีมละมุน สำหรับข้อความรอง */
+    
+    --pastel-blue: #bae6fd;          /* ฟ้าพาสเทล (Soft Sky Blue) */
+    --cream-yellow: #fef08a;         /* เหลืองครีมนุ่มๆ (Soft Creamy Yellow) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    /* เอฟเฟกต์แสงออร่าสีฟ้าพาสเทลและสีครีมสลัวๆ บนพื้นหลังช็อกโกแลต */
+    background-image: radial-gradient(circle at 15% 15%, rgba(186, 230, 253, 0.12) 0%, transparent 50%),
+                      radial-gradient(circle at 85% 85%, rgba(254, 240, 138, 0.08) 0%, transparent 50%);
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header & Profile */
+header {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--pastel-blue), var(--cream-yellow));
+    box-shadow: 0 0 25px rgba(186, 230, 253, 0.2);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--bg-color);
+}
+
+header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #ffffff, var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--cream-yellow);
+    font-weight: 600;
+    margin-top: 8px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.tagline {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.glass-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--pastel-blue); /* หัวข้อหลักสีฟ้าพาสเทลโดดเด่น */
+}
+
+/* Tab Navigation ปุ่มกดสลับ */
+.tab-navigation {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-color);
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background: var(--pastel-blue);
+    border-color: var(--pastel-blue);
+    color: #2b1810; /* ตัวหนังสือเปลี่ยนเป็นสีน้ำตาลเข้มตอนปุ่มแอคทีฟ */
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(186, 230, 253, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(186, 230, 253, 0.25);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.project-card.hide {
+    display: none;
+}
+
+/* Card Image & Overlay */
+.card-image {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.project-card:hover .card-image img {
+    transform: scale(1.06);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(43, 24, 16, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--pastel-blue);
+}
+
+.card-image:hover .image-overlay {
+    opacity: 1;
+}
+
+/* Card Content & Badge */
+.card-content {
+    padding: 20px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+.badge-tech { background: rgba(186, 230, 253, 0.15); color: var(--pastel-blue); }
+.badge-lang { background: rgba(254, 240, 138, 0.15); color: var(--cream-yellow); }
+.badge-act { background: rgba(215, 204, 200, 0.15); color: #efe5e2; }
+
+.card-content h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+/* Skills ส่วนทักษะ */
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+@media (max-width: 680px) {
+    .skills-container { grid-template-columns: 1fr; }
+}
+
+.skill-category h3 {
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    color: var(--cream-yellow);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tags span {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+.skill-tags span:hover {
+    border-color: var(--pastel-blue);
+    background: rgba(186, 230, 253, 0.03);
+    color: #ffffff;
+}
+
+/* Lightbox View */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(26, 15, 10, 0.97);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 85%;
+    max-height: 82%;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    animation: zoomIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 25px; right: 35px;
+    color: #fff;
+    font-size: 42px;
+    cursor: pointer;
+}
+.close-btn:hover { color: var(--pastel-blue); }
+
+/* Footer ส่วนท้าย */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+footer a { color: var(--pastel-blue); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
