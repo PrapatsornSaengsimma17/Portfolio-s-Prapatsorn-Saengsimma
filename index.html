@@ -52,18 +52,6 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="language">
-                    <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
-                        <img src="camp.jpg" alt="Open House">
-                        <div class="image-overlay">คลิกเพื่อดูรูปใหญ่</div>
-                    </div>
-                    <div class="card-content">
-                        <span class="badge badge-lang">Culture</span>
-                        <h3>ค่ายเปิดบ้านภาษาและวัฒนธรรมญี่ปุ่น</h3>
-                        <p>เข้าร่วมกิจกรรมค่ายจำลองเพื่อฝึกฝนทักษะการสื่อสารภาษาญี่ปุ่นและเรียนรู้วัฒนธรรมเชิงลึกร่วมกับเพื่อนๆ ต่างสถาบัน ช่วยเปิดโลกทัศน์และสร้างแรงบันดาลใจ</p>
-                    </div>
-                </div>
-
                 <div class="project-card" data-category="activities">
                     <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
                         <img src="volunteer.jpg" alt="Volunteer">
@@ -79,4 +67,55 @@
             </div>
         </section>
 
-        <section id="skills" class="glass-
+        <section id="skills" class="glass-card">
+            <h2><span class="icon">🛠️</span> ทักษะความสามารถ</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages & Communication</h3>
+                    <div class="skill-tags">
+                        <span>Japanese Communication</span>
+                        <span>JLPT N4 / N5 Level</span>
+                        <span>การฟัง พูด อ่าน เขียน (ระดับ N5)</span>
+                        <span>English for Communication</span>
+                        <span>การฟัง พูด อ่าน เขียน (ภาษาอังกฤษ)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Interpersonal & Teamwork</h3>
+                    <div class="skill-tags">
+                        <span>Teamwork & Collaboration (การทำงานเป็นทีม)</span>
+                        <span>Interpersonal Skills (มนุษยสัมพันธ์ดี)</span>
+                        <span>Active Listening (รับฟังความคิดเห็นผู้อื่น)</span>
+                        <span>Empathy & Volunteer Mindset (จิตสาธารณะ)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="modal-container">
+            <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-side">
+                    <img id="lightbox-img" src="" alt="Work Preview">
+                </div>
+                <div class="modal-info-side">
+                    <div id="modal-badge-container"></div>
+                    <h3 id="modal-title">ชื่อผลงาน</h3>
+                    <div class="chat-bubble">
+                        <p id="modal-desc">รายละเอียดผลงาน...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>ติดต่อฉันได้ที่: <a href="mailto:napat.sengsimma@gmail.com">napat.sengsimma@gmail.com</a></p>
+        <p>&copy; <span id="year"></span> Prapatsorn Saengsimma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
