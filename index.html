@@ -13,7 +13,7 @@
     <header>
         <div class="profile-container">
             <div class="avatar-wrapper">
-                <img src="77.jpg" alt="PRAPATSORN" class="profile-img" onerror="this.src='https://placehold.co/150x150/3e2723/a5f3fc?text=P'">
+                <img src="77.jpg" alt="PRAPATSORN" class="profile-img" onerror="this.src='https://placehold.co/150x150/3e2723/e0f2fe?text=P'">
             </div>
             <h1>PRAPATSORN</h1>
             <p class="subtitle">初めまして、プラパッソーンです！</p>
@@ -26,13 +26,33 @@
         <section id="about" class="glass-card">
             <h2><span class="icon">🇯🇵</span> เกี่ยวกับฉัน</h2>
             <p>ฉันเป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6 ที่มีความหลงใหลในภาษาและวัฒนธรรมญี่ปุ่น ปัจจุบันกำลังมุ่งมั่นพัฒนาทักษะด้านภาษาญี่ปุ่นเพื่อเตรียมพร้อมสู่การเรียนต่อในระดับมหาวิทยาลัยค่ะ</p>
-            <p>นอกจากการเรียนในห้องเรียนแล้ว ฉันยัง
+            <p>นอกจากการเรียนในห้องเรียนแล้ว ฉันยังชอบท้าทายตัวเองด้วยการฝึกฝนภาษาญี่ปุ่นผ่านสื่อต่างๆ ทั้งการอ่าน การฟัง และการลงมือทำโปรเจกต์ดิจิทัลด้วยตนเอง เว็บไซต์ Portfolio นี้จึงเป็นอีกหนึ่งความตั้งใจที่ฉันอยากจะแสดงให้เห็นถึงความมุ่งมั่นในการพัฒนาทักษะรอบด้าน เพื่อพร้อมเปิดรับทุกการเรียนรู้ในระดับมหาวิทยาลัยค่ะ</p>
+        </section>
+
+        <section id="portfolio" class="glass-card">
+            <h2><span class="icon">✨</span> ผลงานและความภาคภูมิใจ</h2>
+            
+            <div class="tab-navigation">
+                <button class="tab-btn active" onclick="switchTab('all')">ทั้งหมด</button>
                 <button class="tab-btn" onclick="switchTab('language')">ภาษา & วัฒนธรรม</button>
                 <button class="tab-btn" onclick="switchTab('tech')">เทคโนโลยี & Dev</button>
                 <button class="tab-btn" onclick="switchTab('activities')">กิจกรรม & จิตอาสา</button>
             </div>
 
             <div class="projects-grid">
+                
+                <div class="project-card" data-category="tech">
+                    <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
+                        <img src="project1.jpg" alt="Portfolio Website" onerror="this.src='https://placehold.co/600x400/3e2723/e0f2fe?text=Portfolio+Web'">
+                        <div class="image-overlay">คลิกเพื่อดูรูปใหญ่</div>
+                    </div>
+                    <div class="card-content">
+                        <span class="badge badge-tech">Web Development</span>
+                        <h3>เว็บไซต์ Portfolio ประจำตัว</h3>
+                        <p>ออกแบบและเขียนโค้ดเว็บไซต์นี้ขึ้นมาด้วยตนเอง เพื่อรวบรวมและนำเสนอผลงาน ความสามารถ รวมถึงสะท้อนความตั้งใจในการนำทักษะด้านเทคโนโลยีมาประยุกต์ใช้ร่วมกับคนสายภาษา</p>
+                    </div>
+                </div>
+
                 
                 <div class="project-card" data-category="tech">
                     <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
