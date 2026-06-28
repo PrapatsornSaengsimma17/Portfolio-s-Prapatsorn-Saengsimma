@@ -7,8 +7,8 @@
 
 body {
     font-family: 'Prompt', sans-serif;
-    background: #fbfbf9; /* พื้นหลังเว็บสีครีมสว่างสะอาดตา */
-    color: #4b2c20; /* ตัวหนังสือหลักสีน้ำตาลช็อกโกแลตเข้ม */
+    background: #FFFDD0; /* พื้นหลังหน้าเว็บ: สีครีมคัสตาร์ดนุ่มๆ นมๆ 🍮 */
+    color: #4b2c20; /* ตัวอักษรทั้งหน้า: สีน้ำตาลช็อกโกแลตเข้ม 🍫 */
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -19,10 +19,10 @@ body {
     padding: 20px;
 }
 
-/* --- Header & Profile (ปรับใหม่: พื้นหลังฟ้าโมมงกะสดใส 🔵 + ตัวหนังสือน้ำตาลช็อกโกแลต 🍫) --- */
+/* --- Header & Profile (พื้นหลังฟ้าโมมงกะ 🔵 + ตัวหนังสือน้ำตาลช็อกโกแลต 🍫) --- */
 header {
-    background: #9FD9F6 !important; /* สีฟ้าโมมงกะพาสเทล น่ารักสดใส ไม่มืด */
-    color: #4b2c20; /* ตัวอักษรสีน้ำตาลช็อกโกแลตเข้ม ชัดเจนอ่านง่าย */
+    background: #9FD9F6 !important; /* สีฟ้าโมมงกะพาสเทล น่ารักสดใส */
+    color: #4b2c20; /* ตัวหนังสือสีน้ำตาลช็อกโกแลตเข้มชัดเจน */
     text-align: center;
     padding: 60px 20px;
     position: relative;
@@ -39,8 +39,8 @@ header {
     margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #4b2c20; /* ขอบรูปสีน้ำตาลช็อกโกแลต */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 4px solid #4b2c20; /* ขอบรูปน้ำตาลช็อกโกแลต */
+    box-shadow: 0 4px 15px rgba(75, 44, 32, 0.15);
 }
 
 .profile-img {
@@ -53,13 +53,13 @@ header h1 {
     font-size: 2.2rem;
     margin-bottom: 5px;
     font-weight: 600;
-    color: #4b2c20; /* ชื่อสีน้ำตาลช็อกโกแลตเข้ม */
+    color: #4b2c20; /* ตัวอักษรชื่อ สีน้ำตาลช็อกโกแลตเข้ม */
 }
 
 .subtitle {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.2rem;
-    color: #5d4037; /* สีน้ำตาลซอฟต์เข้ม */
+    color: #4b2c20; /* สีน้ำตาลช็อกโกแลตเข้ม */
     margin-bottom: 10px;
 }
 
@@ -76,28 +76,30 @@ header h1 {
 }
 
 .contact-badge {
-    background: rgba(255, 255, 255, 0.5); /* พื้นหลังขาวโปร่งแสงละมุนๆ */
+    background: #FFFDD0; /* ปุ่มติดต่อสีครีมคัสตาร์ด */
     color: #4b2c20; /* ตัวหนังสือน้ำตาลเข้ม */
     padding: 8px 16px;
     border-radius: 20px;
     text-decoration: none;
     font-size: 0.9rem;
-    border: 1px solid #4b2c20;
+    border: 2px solid #4b2c20;
     font-weight: 600;
-    transition: background 0.3s;
+    transition: all 0.3s;
 }
 
 .contact-badge:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: #FFFFF0;
+    transform: scale(1.05);
 }
 
-/* --- Section Cards (Glassmorphism) --- */
+/* --- กรอบรอบๆ ประโยค (เปลี่ยนเป็นสีครีมคัสตาร์ดสว่างใส ไม่มืดมน) --- */
 .glass-card {
-    background: white;
+    background: #FFFFF0; /* สีครีมคัสตาร์ดสว่าง ละมุนใจ 🍮 */
     border-radius: 16px;
     padding: 30px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 2px solid #ecf0f1;
+    box-shadow: 0 4px 20px rgba(75, 44, 32, 0.05);
 }
 
 .glass-card h2 {
@@ -114,7 +116,7 @@ header h1 {
 
 .glass-card p {
     margin-bottom: 15px;
-    color: #5d4037; /* เนื้อความน้ำตาลอ่านง่ายบนพื้นขาว */
+    color: #4b2c20; /* เนื้อความสีน้ำตาลช็อกโกแลต */
     text-indent: 20px;
 }
 
@@ -123,7 +125,7 @@ header h1 {
     display: flex;
     gap: 10px;
     margin-bottom: 25px;
-    border-bottom: 2px solid #e5e7eb;
+    border-bottom: 2px solid #d7ccc8;
     padding-bottom: 10px;
 }
 
@@ -134,13 +136,13 @@ header h1 {
     font-size: 1rem;
     padding: 8px 16px;
     cursor: pointer;
-    color: #a1887f; /* สีปุ่มปกติ น้ำตาลนู้ดซอฟต์ๆ */
+    color: #a1887f; /* ปุ่มปกติสีน้ำตาลอ่อนซอฟต์ๆ */
     position: relative;
     transition: color 0.3s;
 }
 
 .tab-btn.active {
-    color: #4b2c20; /* สีปุ่มที่เลือก น้ำตาลช็อกโกแลตเข้ม */
+    color: #4b2c20; /* ปุ่มที่เลือกสีน้ำตาลช็อกโกแลตเข้ม */
     font-weight: 600;
 }
 
@@ -163,11 +165,11 @@ header h1 {
 }
 
 .project-card {
-    background: white;
+    background: #FFFFF0; /* การ์ดผลงานสีครีมคัสตาร์ดสว่าง */
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    border: 1px solid #efebe9;
+    box-shadow: 0 4px 15px rgba(75, 44, 32, 0.04);
+    border: 2px solid #efebe9;
     display: flex;
     flex-direction: column;
 }
@@ -195,11 +197,11 @@ header h1 {
     flex-shrink: 0;
 }
 
-/* 🔵 ลายจุดโพกาดอท สีฟ้าโมมงกะพาสเทลน่ารักสดใส (#9FD9F6) บนพื้นครีม 🔵 */
+/* 🔵 ลายจุดโพกาดอท สีฟ้าโมมงกะพาสเทลน่ารักสดใส (#9FD9F6) บนพื้นครีมคัสตาร์ด 🔵 */
 .jlpt-cover {
     width: 100%;
     height: 100%;
-    background-color: #fef9e7; 
+    background-color: #FFFDD0; 
     background-image: radial-gradient(#9FD9F6 20%, transparent 20%),
                       radial-gradient(#9FD9F6 20%, transparent 20%);
     background-position: 0 0, 15px 15px;
@@ -216,7 +218,7 @@ header h1 {
     color: #4b2c20; /* อักษร JLPT สีน้ำตาลช็อกโกแลต */
     letter-spacing: 4px;
     padding: 10px 20px;
-    background-color: rgba(254, 249, 231, 0.85); 
+    background-color: rgba(255, 253, 208, 0.85); /* บังจุดโพกาดอทด้วยสีครีมคัสตาร์ด */
     border-radius: 12px;
     z-index: 1;
 }
@@ -231,9 +233,161 @@ header h1 {
 .card-content p {
     text-indent: 0;
     font-size: 0.9rem;
-    color: #5d4037; 
+    color: #4b2c20; /* ข้อความใต้การ์ดสีน้ำตาลช็อกโกแลต */
 }
 
 .badge {
     align-self: flex-start;
-    padding: 4px
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.badge-lang { background: #9FD9F6; color: #4b2c20; } /* ป้ายสถานะสีฟ้าโมมงกะ ตัดกับตัวหนังสือสีน้ำตาล */
+.badge-act { background: #FFFDD0; color: #4b2c20; border: 1px solid #4b2c20; }
+
+.card-content h3 {
+    font-size: 1.15rem;
+    color: #4b2c20; /* ชื่อผลงานสีน้ำตาลช็อกโกแลต */
+    margin-bottom: 10px;
+}
+
+/* --- Skills Tags --- */
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media(min-width: 768px) {
+    .skills-container { grid-template-columns: 1fr 1fr; }
+}
+
+.skill-category h3 {
+    font-size: 1rem;
+    color: #4b2c20; 
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags span {
+    background: #FFFFF0; /* กล่องสกิลสีครีมสว่าง */
+    color: #4b2c20; 
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border: 1px solid #4b2c20;
+}
+
+/* --- Lightbox Popup Modals --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(75, 44, 32, 0.8); /* พื้นหลังตอนป๊อปอัพขึ้นเป็นสีน้ำตาลจางๆ */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-container {
+    background: #FFFFF0; /* ตัวกล่องป๊อปอัพสีครีมสว่าง */
+    width: 100%;
+    max-width: 850px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(75, 44, 32, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 2rem; color: #4b2c20; 
+    cursor: pointer; z-index: 10;
+}
+
+.close-btn:hover { color: #ef4444; }
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width: 768px) {
+    .modal-body { flex-direction: row; }
+}
+
+.modal-image-side {
+    background: #2b160e; /* พื้นหลังรูปตอนขยายสีน้ำตาลเข้มมืด */
+    flex: 1.2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.modal-image-side img {
+    max-width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    background: rgba(255, 253, 208, 0.4); 
+    color: #4b2c20; border: none;
+    padding: 12px 16px; cursor: pointer;
+    font-size: 1.2rem; border-radius: 50%;
+}
+
+#prev-btn { left: 15px; }
+#next-btn { right: 15px; }
+
+.modal-info-side {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFFFF0;
+}
+
+#modal-title {
+    font-size: 1.3rem;
+    color: #4b2c20; 
+    margin-bottom: 15px;
+}
+
+.chat-bubble {
+    background: #FFFDD0; /* กล่องคำพูดสีครีมคัสตาร์ด */
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #4b2c20;
+}
+
+#modal-desc {
+    font-size: 0.95rem;
+    color: #4b2c20; 
+    line-height: 1.6;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #4b2c20; 
+    font-size: 0.85rem;
+}
