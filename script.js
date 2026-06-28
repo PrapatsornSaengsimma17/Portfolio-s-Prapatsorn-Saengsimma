@@ -1,63 +1,79 @@
-/**
- * 1. ระบบกดสลับเปลี่ยนหน้าผลงาน (Tab Switching & Filtering)
- */
-function switchTab(category) {
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    
-    if (event && event.target) {
-        event.target.classList.add('active');
-    }
+let currentImages = [];
+let currentIndex = 0;
 
+function switchTab(category, event) {
+    const tabs = document.querySelectorAll('.tab-btn');
     const cards = document.querySelectorAll('.project-card');
 
+    // เปลี่ยนสีปุ่มที่ถูกกด
+    tabs.forEach(tab => tab.classList.remove('active'));
+    if(event) event.target.classList.add('active');
+
+    // กรองผลงาน
     cards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        
-        if (category === 'all' || cardCategory === category) {
-            card.classList.remove('hide');
-            card.style.animation = 'none';
-            card.offsetHeight; /* Trigger reflow */
-            card.style.animation = 'fadeIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards';
+        if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
         } else {
-            card.classList.add('hide');
+            card.style.display = 'none';
         }
     });
 }
 
-/**
- * 2. ระบบเปิดกล่องแชทลอยอธิบายผลงาน (Dynamic Pop-up Modal)
- */
-function openLightbox(imageSrc) {
-    const currentCard = event.currentTarget.closest('.project-card');
-    
-    const title = currentCard.querySelector('h3').innerText;
-    const desc = currentCard.querySelector('p').innerText;
-    const badgeHTML = currentCard.querySelector('.badge').outerHTML;
+function openLightbox(cardElement) {
+    // 1. ดึงชื่อไฟล์รูปทั้งหมดจาก data-images แล้วจับแยกใส่ Array
+    const imageString = cardElement.getAttribute('data-images');
+    currentImages = imageString.split(',').map(img => img.trim());
+    currentIndex = 0; // เริ่มที่รูปแรกเสมอ
 
-    document.getElementById('lightbox-img').src = imageSrc;
+    // 2. ดึงข้อความและหัวข้อจากในตัวการ์ด
+    const title = cardElement.querySelector('h3').innerText;
+    const desc = cardElement.querySelector('p').innerText;
+    const badge = cardElement.querySelector('.badge').innerText;
+    const badgeClass = cardElement.querySelector('.badge').className;
+
+    // 3. เอาข้อมูลไปใส่ในกล่อง Popup (Lightbox)
+    document.getElementById('lightbox-img').src = currentImages[currentIndex];
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-desc').innerText = desc;
-    document.getElementById('modal-badge-container').innerHTML = badgeHTML;
+    document.getElementById('modal-badge-container').innerHTML = `<span class="${badgeClass}">${badge}</span>`;
 
+    // 4. เช็คว่าถ้ามีรูปมากกว่า 1 รูป ให้แสดงปุ่มเลื่อนซ้าย-ขวา
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    if (currentImages.length > 1) {
+        prevBtn.style.display = 'block';
+        nextBtn.style.display = 'block';
+    } else {
+        prevBtn.style.display = 'none'; // ถ้ามีรูปเดียวให้ซ่อนปุ่ม
+        nextBtn.style.display = 'none';
+    }
+
+    // 5. แสดงกล่อง Popup
     document.getElementById('lightbox').style.display = 'flex';
 }
 
-/**
- * 3. ระบบปิดกล่องแชทลอย
- */
-function closeLightbox(e) {
-    if (e.target.id === 'lightbox' || e.target.classList.contains('close-btn')) {
+function changeImage(direction, event) {
+    // ป้องกันไม่ให้การคลิกปุ่มเลื่อนไปเผลอปิดกล่อง Popup
+    event.stopPropagation();
+    
+    // เปลี่ยน index ของรูป
+    currentIndex += direction;
+    
+    // วนลูปรูปภาพ (ถ้ารูปสุดท้ายแล้วกดถัดไป ให้กลับมารูปแรก)
+    if (currentIndex < 0) {
+        currentIndex = currentImages.length - 1;
+    } else if (currentIndex >= currentImages.length) {
+        currentIndex = 0;
+    }
+    
+    // อัปเดตรูปใหม่บนหน้าจอ
+    document.getElementById('lightbox-img').src = currentImages[currentIndex];
+}
+
+function closeLightbox(event) {
+    // ปิดเมื่อคลิกที่พื้นหลังสีดำ หรือคลิกปุ่มกากบาท (X)
+    if (event.target.id === 'lightbox' || event.target.className === 'close-btn') {
         document.getElementById('lightbox').style.display = 'none';
     }
 }
-
-/**
- * 4. อัปเดตปี ค.ศ. อัตโนมัติในส่วนล่างสุดของเว็บ
- */
-document.addEventListener("DOMContentLoaded", () => {
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
-});
