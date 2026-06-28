@@ -32,24 +32,23 @@
         <section id="about" class="glass-card">
             <h2><span class="icon">🇯🇵</span> เกี่ยวกับฉัน</h2>
             <p>ฉันเป็นนักเรียนชั้นมัธยมศึกษาปีที่ 6 ที่มีความหลงใหลในภาษาและวัฒนธรรมญี่ปุ่น ปัจจุบันกำลังมุ่งมั่นพัฒนาทักษะด้านภาษาญี่ปุ่นเพื่อเตรียมพร้อมสู่การเรียนต่อในระดับมหาวิทยาลัยค่ะ</p>
-            <p>นอกจากการเรียนในห้องเรียนแล้ว ฉันยังชอบท้าทายตัวเองด้วยการฝึกฝนภาษาญี่ปุ่นผ่านสื่อต่างๆ ทั้งการอ่าน การฟัง และการลงมือสร้างสรรค์สิ่งใหม่ๆ ด้วยตนเอง เว็บไซต์แฟ้มสะสมผลงานนี้จึงเป็นอีกหนึ่งความตั้งใจที่ฉันอยากจะแสดงให้เห็นถึงความมุ่งมั่นในการพัฒนาทักษะรอบด้าน เพื่อพร้อมเปิดรับทุกการเรียนรู้ in ระดับมหาวิทยาลัยค่ะ</p>
+            <p>นอกจากการเรียนในห้องเรียนแล้ว ฉันยังชอบท้าทายตัวเองด้วยการฝึกฝนภาษาญี่ปุ่นผ่านสื่อต่างๆ ทั้งการอ่าน การฟัง และการลงมือสร้างสรรค์สิ่งใหม่ๆ ด้วยตนเอง เว็บไซต์แฟ้มสะสมผลงานนี้จึงเป็นอีกหนึ่งความตั้งใจที่ฉันอยากจะแสดงให้เห็นถึงความมุ่งมั่นในการพัฒนาทักษะรอบด้าน เพื่อพร้อมเปิดรับทุกการเรียนรู้ในระดับมหาวิทยาลัยค่ะ</p>
         </section>
 
         <section id="portfolio" class="glass-card">
             <h2><span class="icon">✨</span> ผลงานและความภาคภูมิใจ</h2>
             
             <div class="tab-navigation">
-                <button class="tab-btn active" onclick="switchTab('all')">ทั้งหมด</button>
-                <button class="tab-btn" onclick="switchTab('language')">ภาษา & วัฒนธรรม</button>
-                <button class="tab-btn" onclick="switchTab('activities')">กิจกรรม & จิตอาสา</button>
+                <button class="tab-btn active" onclick="switchTab('all', event)">ทั้งหมด</button>
+                <button class="tab-btn" onclick="switchTab('language', event)">ภาษา & วัฒนธรรม</button>
+                <button class="tab-btn" onclick="switchTab('activities', event)">กิจกรรม & จิตอาสา</button>
             </div>
 
             <div class="projects-grid">
 
-                <div class="project-card" data-category="language">
-                    <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
+                <div class="project-card" data-category="language" data-images="jlpt.jpg, jlpt2.jpg">
+                    <div class="card-image" onclick="openLightbox(this.closest('.project-card'))">
                         <img src="jlpt.jpg" alt="JLPT">
-                        <div class="image-overlay">คลิกเพื่อดูรูปใหญ่</div>
                     </div>
                     <div class="card-content">
                         <span class="badge badge-lang">Language</span>
@@ -58,15 +57,14 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="activities">
-                    <div class="card-image" onclick="openLightbox(this.querySelector('img').src)">
+                <div class="project-card" data-category="activities" data-images="volunteer.jpg, volunteer2.jpg, volunteer3.jpg">
+                    <div class="card-image" onclick="openLightbox(this.closest('.project-card'))">
                         <img src="volunteer.jpg" alt="Volunteer">
-                        <div class="image-overlay">คลิกเพื่อดูรูปใหญ่</div>
                     </div>
                     <div class="card-content">
                         <span class="badge badge-act">Volunteer</span>
                         <h3>กิจกรรมจิตอาสายุวกาชาด ระดับ 4</h3>
-                        <p>ผ่านการฝึกอบรมและเข้าร่วมกิจกรรมบำเพ็ญประโยชน์เพื่อส่วนรวม in ฐานะยุวกาชาดระดับ 4 ซึ่งช่วยหล่อหลอมทักษะความเป็นผู้นำ การทำงานเป็นทีม และการมีจิตสาธารณะ</p>
+                        <p>ผ่านการฝึกอบรมและเข้าร่วมกิจกรรมบำเพ็ญประโยชน์เพื่อส่วนรวมในฐานะยุวกาชาดระดับ 4 ซึ่งช่วยหล่อหลอมทักษะความเป็นผู้นำ การทำงานเป็นทีม และการมีจิตสาธารณะ</p>
                     </div>
                 </div>
 
@@ -76,7 +74,6 @@
         <section id="skills" class="glass-card">
             <h2><span class="icon">🛠️</span> ทักษะความสามารถ</h2>
             <div class="skills-container">
-                
                 <div class="skill-category">
                     <h3>ภาษาญี่ปุ่น (Japanese Skills)</h3>
                     <div class="skill-tags">
@@ -85,7 +82,6 @@
                         <span>การฟัง พูด อ่าน เขียน ระดับ N5 (N5 Skills)</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>ภาษาอังกฤษ (English Skills)</h3>
                     <div class="skill-tags">
@@ -93,7 +89,6 @@
                         <span>การฟัง พูด อ่าน เขียน ภาษาอังกฤษ (English Skills)</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>สื่อดิจิทัลและความคิดสร้างสรรค์ (Digital & Creative)</h3>
                     <div class="skill-tags">
@@ -102,7 +97,6 @@
                         <span>ทักษะการวาดภาพพื้นฐาน (Basic Drawing & Illustration)</span>
                     </div>
                 </div>
-
                 <div class="skill-category">
                     <h3>การทำงานและมนุษยสัมพันธ์ (Interpersonal & Teamwork)</h3>
                     <div class="skill-tags">
@@ -112,7 +106,6 @@
                         <span>จิตสาธารณะ (Empathy & Volunteer Mindset)</span>
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
@@ -121,24 +114,4 @@
         <div class="modal-container">
             <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
             <div class="modal-body">
-                <div class="modal-image-side">
-                    <img id="lightbox-img" src="" alt="Work Preview">
-                </div>
-                <div class="modal-info-side">
-                    <div id="modal-badge-container"></div>
-                    <h3 id="modal-title">ชื่อผลงาน</h3>
-                    <div class="chat-bubble">
-                        <p id="modal-desc">รายละเอียดผลงาน...</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; <span id="year"></span> Prapatsorn Saengsimma. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <div class="modal-image-side
