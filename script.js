@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- ระบบเลื่อนภาพอัตโนมัติ 4 วินาที (วนขวาแบบต่อเนื่อง ไร้หน้าขาว 100%) ---
+    
+    // ==========================================
+    // 1. ระบบเลื่อนภาพสไลด์อัตโนมัติ (Inline Slider)
+    // ==========================================
     const sliders = document.querySelectorAll(".card-image.inline-slider");
 
     sliders.forEach(slider => {
@@ -8,30 +11,112 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalItems = items.length; 
         let currentIndex = 0;
 
-        // ถ้าชิ้นไหนมีแค่ 1 รูป ให้ระบบอยู่เฉยๆ ล็อกรูปเดิมไว้ ไม่ต้องขยับไปไหนเลย ป้องกันบั๊กหน้าขาว
-        if (totalItems <= 1) return; 
+        // สำหรับงานที่มีรูปเดียว (ค่ายภาษา) ให้เล่นเอฟเฟกต์เฟดวนรูปตัวเองนุ่มๆ
+        if (totalItems === 1) {
+            setInterval(() => {
+                wrapper.style.transition = "opacity 0.4s ease-in-out";
+                wrapper.style.opacity = "0.3";
+                setTimeout(() => {
+                    wrapper.style.opacity = "1";
+                }, 400); 
+            }, 4000);
+            return;
+        } 
 
+        // สำหรับงานที่มีหลายรูป (JLPT, ยุวกาชาด) เลื่อนขวาต่อเนื่องไร้หน้าขาว
         setInterval(() => {
-            // เลื่อนไปทางขวาเรื่อยๆ (+1)
             currentIndex++;
-            
-            // ป้องกันหน้าขาว: ถ้าดัชนีวิ่งเกินจำนวนรูปจริง ให้เด้งกลับมารูปแรก (index 0) ทันที
             if (currentIndex >= totalItems) {
                 currentIndex = 0; 
             }
-            
-            // คำนวณระยะการเลื่อนซ้าย-ขวา
             const offset = currentIndex * -100;
+            wrapper.style.transition = "transform 0.5s ease-in-out";
             wrapper.style.transform = `translateX(${offset}%)`;
         }, 4000);
     });
 
-    // --- ส่วนของระบบ Tab Navigation และ Lightbox Popups เดิมที่เสถียรอยู่แล้ว ---
-    const tabBtns = document.querySelectorAll(".tab-btn");
+    // ==========================================
+    // 2. ระบบกดคลิกที่การ์ดเพื่อเปิดดูรูปใหญ่ (Lightbox Popup)
+    // ==========================================
     const projectCards = document.querySelectorAll(".project-card");
+    const lightbox = document.getElementById("lightbox");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".close-btn");
+    
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    let currentImages = [];
+    let currentImgIndex = 0;
+
+    projectCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const title = card.querySelector("h3").innerText;
+            const desc = card.querySelector(".card-content p").innerText;
+            
+            const sliderItems = card.querySelectorAll(".slider-item");
+            currentImages = [];
+            
+            sliderItems.forEach(img => {
+                currentImages.push(img.src);
+            });
+
+            currentImgIndex = 0;
+            
+            modalTitle.innerText = title;
+            modalDesc.innerText = desc;
+            modalImg.src = currentImages[currentImgIndex];
+
+            if (currentImages.length <= 1) {
+                prevBtn.style.display = "none";
+                nextBtn.style.display = "none";
+            } else {
+                prevBtn.style.display = "block";
+                nextBtn.style.display = "block";
+            }
+
+            lightbox.style.display = "flex";
+        });
+    });
+
+    nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); 
+        currentImgIndex++;
+        if (currentImgIndex >= currentImages.length) {
+            currentImgIndex = 0; 
+        }
+        modalImg.src = currentImages[currentImgIndex];
+    });
+
+    prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentImgIndex--;
+        if (currentImgIndex < 0) {
+            currentImgIndex = currentImages.length - 1; 
+        }
+        modalImg.src = currentImages[currentImgIndex];
+    });
+
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            lightbox.style.display = "none";
+        }
+    });
+
+    // ==========================================
+    // 3. ระบบสลับแท็บเมนูผลงาน (Tab Navigation)
+    // ==========================================
+    const tabBtns = document.querySelectorAll(".tab-btn");
 
     tabBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (e) => {
+            e.stopPropagation(); 
             tabBtns.forEach(b => b.classList.remove("active"));
             btn.classList.add("active");
             const filter = btn.getAttribute("data-tab");
