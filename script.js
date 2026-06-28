@@ -1,25 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- ระบบเลื่อนภาพอัตโนมัติ 4 วินาที (แก้บั๊กห้ามเจอหน้าขาวเด็ดขาด) ---
+    // --- ระบบเลื่อนภาพอัตโนมัติ 4 วินาที (วนขวาแบบต่อเนื่อง ไร้หน้าขาว 100%) ---
     const sliders = document.querySelectorAll(".card-image.inline-slider");
 
     sliders.forEach(slider => {
         const wrapper = slider.querySelector(".slider-wrapper");
         const items = slider.querySelectorAll(".slider-item");
-        const totalItems = items.length; // นับเฉพาะรูปที่มีอยู่จริงเท่านั้น
+        const totalItems = items.length; 
         let currentIndex = 0;
 
-        // บล็อกไว้เลย: ถ้าผลงานชิ้นนั้นมีแค่ 1 รูป ไม่ต้องสั่งให้มันทำอะไรทั่งนั้น อยู่เฉยๆ โชว์รูปเดิมวนไป
+        // ถ้าชิ้นไหนมีแค่ 1 รูป ให้ระบบอยู่เฉยๆ ล็อกรูปเดิมไว้ ไม่ต้องขยับไปไหนเลย ป้องกันบั๊กหน้าขาว
         if (totalItems <= 1) return; 
 
-        // ถ้ามีหลายรูป ให้รันฟังก์ชันเลื่อนอัตโนมัติทุกๆ 4 วินาที
         setInterval(() => {
+            // เลื่อนไปทางขวาเรื่อยๆ (+1)
             currentIndex++;
             
-            // ถ้าเลื่อนจนเกินรูปสุดท้ายที่มีอยู่จริง ให้ดีดกลับมารูปแรก (หน้าปก) ทันที โดยไม่ผ่านหน้าว่าง
+            // ป้องกันหน้าขาว: ถ้าดัชนีวิ่งเกินจำนวนรูปจริง ให้เด้งกลับมารูปแรก (index 0) ทันที
             if (currentIndex >= totalItems) {
                 currentIndex = 0; 
             }
             
+            // คำนวณระยะการเลื่อนซ้าย-ขวา
             const offset = currentIndex * -100;
             wrapper.style.transform = `translateX(${offset}%)`;
         }, 4000);
