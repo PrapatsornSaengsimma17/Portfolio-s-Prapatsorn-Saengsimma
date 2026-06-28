@@ -49,7 +49,7 @@
                 <div class="project-card" data-category="language">
                     <div class="card-image inline-slider">
                         <div class="slider-wrapper">
-                            <img src="JLPT00.PNG" alt="JLPT Cover" class="slider-item">
+                            <img src="JLPT00.png" alt="JLPT Cover" class="slider-item">
                         </div>
                     </div>
                     <div class="card-content">
@@ -133,4 +133,28 @@
             <span class="close-btn">&times;</span>
             <div class="modal-body">
                 <div class="modal-image-side">
-                    <button id="prev-btn" class="slider-btn">&#
+                    <button id="prev-btn" class="slider-btn">&#10094;</button>
+                    <img id="lightbox-img" src="" alt="Work Preview">
+                    <button id="next-btn" class="slider-btn">&#10095;</button>
+                </div>
+                <div class="modal-info-side">
+                    <div id="modal-badge-container"></div>
+                    <h3 id="modal-title">ชื่อผลงาน</h3>
+                    <div class="chat-bubble">
+                        <p id="modal-desc">รายละเอียดผลงาน...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Prapatsorn Saengsimma. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById("year").innerText = new Date().getFullYear();
+    </script>
+</body>
+</html>
